@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Академия Жизни</title>
+<meta name="description" content="Академия Жизни — научись жить, играя. 12 игровых факультетов: финансы, кибербезопасность, первая помощь и другое.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  try { var t = JSON.parse(localStorage.getItem('academy_life_v1') || '{}').theme; if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <a class="brand" href="#home"><span class="brand-logo">🎓</span><span class="brand-name">Академия Жизни</span></a>
+  <nav class="nav" id="nav">
+    <a href="#map" data-r="map">🗺️ <span>Карта</span></a>
+    <a href="#profile" data-r="profile">👤 <span>Профиль</span></a>
+    <a href="#encyclopedia" data-r="encyclopedia">📚 <span>Энциклопедия</span></a>
+    <a href="#leaders" data-r="leaders">🏆 <span>Лидеры</span></a>
+    <a href="#about" data-r="about">ℹ️ <span>О проекте</span></a>
+  </nav>
+  <div class="top-actions">
+    <div class="hud" id="hud"></div>
+    <select class="icon-btn lang-sel" id="langSel" title="Язык / Til / Language" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select>
+    <button class="icon-btn" id="soundBtn" title="Звук">🔊</button>
+    <button class="icon-btn" id="themeBtn" title="Тема">🌙</button>
+  </div>
+</header>
+<main id="app"></main>
+<div id="toasts"></div>
+<canvas id="confetti"></canvas>
+
+<script src="js/vendor/three.min.js"></script>
+<script>window.THREE || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');</script>
+<script>
+  (function () { var l = 'ru'; try { l = JSON.parse(localStorage.getItem('academy_life_v1') || '{}').lang || 'ru'; } catch (e) { }
+    if (l === 'en' || l === 'uz') document.write('<script src="js/i18n-' + l + '.js"><\/script>'); })();
+</script>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/campus3d.js"></script>
+<script src="js/games1.js"></script>
+<script src="js/games2.js"></script>
+<script src="js/games3.js"></script>
+<script src="js/games4.js"></script>
+<script>App.init();</script>
+</body>
+</html>
